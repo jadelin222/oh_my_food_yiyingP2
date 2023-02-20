@@ -1,0 +1,58 @@
+$primary-color:#9356DC;
+$secondary-color: #FF79DA;
+$secondary-color-selected: #f5edff;
+$tertiary-color: #99E2D0;
+$tertiary-color-dark:#098c6c;
+$darker-gray-color:#eaeaea;
+$gray-color:#f6f6f6;
+$footer-color:#353535;
+$p-color:#858585;
+
+*{
+    box-sizing: border-box;
+    // margin: 0 auto;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+}
+body{
+    font-family: 'Roboto',sans-serif;
+    font-size: 18px;
+    margin: 0;
+    //  text-align: center;
+}
+html {
+    scroll-behavior: smooth;
+}
+header{
+    text-align: center;  
+    // z-index:2;
+}
+header, .li-header{
+    font-family: 'Shrikhand';
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+ul{
+    list-style: none;
+}
+button{
+    border: none;
+    cursor: pointer;
+}
+.colored-btn{
+    color: white;
+    font-size: 16px;
+    padding: 15px 20px;
+    border-radius: 50px;
+    background: linear-gradient($secondary-color, $primary-color);
+    box-shadow: 2px 4px 4px rgb(100 100 111 / 25%);
+}
+hr{
+    border: 3px solid $tertiary-color;
+    width: 50px;
+    margin-left: 0;
+}

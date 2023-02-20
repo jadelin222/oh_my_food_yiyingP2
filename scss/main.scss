@@ -1,0 +1,169 @@
+@import 'config';
+@import 'home';
+@import 'menu';
+.step-guide{
+    padding: 1em;
+
+    &__btn-container{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 20px;
+        // align-items: center;
+        // justify-content: center;
+    }
+    button{
+        text-align: left;
+        font-size: 16px;
+        padding: 2em;
+        background: $gray-color;
+        box-shadow: 2px 4px 4px rgb(100 100 111 / 25%);
+        border-radius: 20px;
+        // is this way of nefsting ok
+        .btn-num{
+            // padding: 1em;
+            padding: 10px 14px;
+            color: white;
+            margin-left: -50px;
+            border-radius: 50%;
+            background: $primary-color;
+        }
+    }
+    button:hover{
+        background-color: $secondary-color-selected;
+    }
+    
+}
+header{
+    // height: 80px;
+    font-size: 25px;
+    // font-size: 18px;
+    padding: 0.4em 0;
+    // box-shadow: 0 4px 4px rgb(100, 100, 111 / 25%);
+    box-shadow: 5px 6px 8px rgb(0,0,0);
+    
+    // margin-bottom: 4px;
+    i{
+        float: left;
+    } 
+    // is there a better way to do the icon?
+}
+
+.explore-section{
+    text-align: center;
+    // align-items: center;
+    background: $gray-color;
+    padding-bottom: 1.5em;
+    // box-shadow: 5px 6px 8px rgba(0,0,0,0.05);
+
+    &__search-location{
+        // z-index: -1;
+        padding: 0.8em 0;
+        background: $darker-gray-color;
+
+        input{
+            border: none;
+            text-align: center;
+            font-size: 15px;
+            width: 8em;
+            background: $darker-gray-color;
+        }
+        input:focus{
+            outline: transparent;
+        }
+    }
+    &__explore-btn{
+        padding: 10px 10px 30px 10px;
+        line-height: 2.2em;
+        p{
+            color: $p-color;
+        }
+        button{
+            // color: white;
+            font-size: 16px;
+            // padding: 15px 20px;
+            // border-radius: 50px;
+            // background: linear-gradient($secondary-color, $primary-color);
+            // box-shadow: 2px 4px 4px rgb(100 100 111 / 25%);
+        }
+    }
+}
+.step-guide{
+    gap: 10px;
+}
+.restaurant-section{
+    background: $gray-color;
+    padding: 15px;
+    &__cards-container{
+        display: flex;
+        width: 100%;
+        //  flex-direction: column;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    &__card{
+        display: flex;
+        flex-direction: column;
+        flex:1 1 450px;
+        overflow: hidden;
+        max-height: 250px;
+        min-width: 250px;
+        border-radius: 25px;
+        box-shadow: 5px 6px 8px rgba(0,0,0,0.05);
+
+        img{
+            height: 70%;
+            object-fit: cover;
+        }
+    }
+    &__card-body{
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        background: white;
+        line-height: 0.4em;
+        padding: 0 0 0 20px;
+        align-items: center;
+        i{
+            padding-right: 20px;
+        }
+    }
+    &__new-tag{
+        background: $tertiary-color;
+        color: $tertiary-color-dark;
+        position:absolute;
+        right: 30px;
+        padding: 0.3em 1.8em;
+        border-radius: 3px;
+    }
+}
+.footer{
+    // position: relative;
+    // position: absolute;
+    // bottom: 0;
+    background-color: $footer-color;
+    color: white;
+    padding: 25px;
+    a {
+        color: white;
+    }
+    li{
+        padding: 0.2em 0;
+    }
+    &__heading{
+        font-family: 'Shrikhand';
+    }
+}
+//if footer always the same should i put it in config
+.res-img{
+    // position: absolute;
+    z-index: -1;
+    height: 290px;
+    width:100%;
+    object-fit: cover;
+    // overflow: hidden;
+}
+
+
+// do i use 1 css for each html or 
+//why background image dont work on my end
