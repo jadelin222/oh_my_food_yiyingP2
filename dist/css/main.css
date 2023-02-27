@@ -19,6 +19,7 @@ html {
 
 header {
   text-align: center;
+  padding: 0 15px;
 }
 
 header, .li-header {
@@ -37,6 +38,7 @@ ul {
 button {
   border: none;
   cursor: pointer;
+  font-family: roboto;
 }
 
 .colored-btn {
@@ -48,12 +50,132 @@ button {
   box-shadow: 2px 4px 4px rgba(100, 100, 111, 0.25);
 }
 
+.colored-btn:hover {
+  box-shadow: 2px 4px 4px rgba(100, 100, 111, 0.75);
+  filter: brightness(110%);
+}
+
 hr {
   border: 3px solid #99E2D0;
   width: 50px;
   margin-left: 0;
 }
 
+@keyframes likebtn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.heart-btn {
+  background-color: transparent;
+  font-size: 25px;
+}
+.heart-btn .fas {
+  position: relative;
+  font-size: 25.5px;
+  right: 31.5px;
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+  background-image: linear-gradient(to top right, #FF79DA, #9356DC);
+  opacity: 0;
+}
+.heart-btn .fas:hover {
+  animation: likebtn 0.5s ease-out forwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -4;
+  }
+}
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fade 3s normal forwards linear;
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #9356DC;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
 .menu {
   position: relative;
   top: -40px;
@@ -79,18 +201,20 @@ hr {
 }
 .menu__section-title {
   margin-bottom: 0;
+  font-weight: 400;
 }
 .menu__cards-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 20px;
   margin: 20px 0;
 }
 .menu__card {
+  display: flex;
+  flex: 1 0 300px;
   max-height: 120px;
   overflow: hidden;
   position: relative;
-  display: flex;
   background-color: white;
   border-radius: 15px;
   box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.05);
@@ -127,14 +251,15 @@ hr {
 .menu__price {
   flex: 1;
   padding: 0 15px;
-  align-self: flex-end;
+  display: flex;
+  align-items: flex-end;
   height: 100%;
   max-width: 80px;
   transition: margin-right 0.5s ease-out;
 }
 .menu__price h4 {
+  font-size: 16px;
   margin: 18px 0;
-  text-align: center;
 }
 .menu__check {
   position: absolute;
@@ -158,9 +283,16 @@ hr {
   width: 330px;
   overflow: hidden;
 }
+.menu__text h3 {
+  font-weight: 500;
+  font-size: 20px;
+}
 .menu__text p {
   min-width: 100px;
   overflow: hidden;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 300;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
@@ -174,14 +306,19 @@ hr {
 }
 .step-guide__btn-container {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 30px;
   padding: 0 20px;
 }
 .step-guide button {
+  display: flex;
+  flex: 1 0 300px;
+  align-items: center;
+  gap: 15px;
   text-align: left;
-  font-size: 16px;
-  padding: 2em;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 1.5em;
   background: #f6f6f6;
   box-shadow: 2px 4px 4px rgba(100, 100, 111, 0.25);
   border-radius: 20px;
@@ -199,11 +336,20 @@ hr {
 
 header {
   font-size: 25px;
-  padding: 0.4em 0;
-  box-shadow: 5px 6px 8px rgb(0, 0, 0);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 888;
+  padding: 0.4em 0.5em;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
 }
-header i {
-  float: left;
+header a {
+  position: absolute;
+  left: 20px;
+}
+header a i {
+  vertical-align: middle;
 }
 
 .explore-section {
@@ -226,11 +372,12 @@ header i {
   outline: transparent;
 }
 .explore-section__explore-btn {
-  padding: 10px 10px 30px 10px;
+  padding: 10px 20px 30px 20px;
   line-height: 2.2em;
 }
 .explore-section__explore-btn p {
   color: #858585;
+  font-weight: 300;
 }
 .explore-section__explore-btn button {
   font-size: 16px;
@@ -252,6 +399,7 @@ header i {
 }
 .restaurant-section__card {
   display: flex;
+  position: relative;
   flex-direction: column;
   flex: 1 1 450px;
   overflow: hidden;
@@ -269,19 +417,27 @@ header i {
   display: flex;
   justify-content: space-between;
   height: 100%;
+  line-height: 1.5em;
   background: white;
-  line-height: 0.4em;
-  padding: 0 0 0 20px;
+  padding: 10px 0 10px 20px;
   align-items: center;
 }
-.restaurant-section__card-body i {
-  padding-right: 20px;
+.restaurant-section__card-body h4, .restaurant-section__card-body p {
+  margin: 0;
+}
+.restaurant-section__card-body h4 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.restaurant-section__card-body p {
+  font-size: 16px;
+  font-weight: 300;
 }
 .restaurant-section__new-tag {
   background: #99E2D0;
   color: #098c6c;
   position: absolute;
-  right: 30px;
+  right: 20px;
   padding: 0.3em 1.8em;
   border-radius: 3px;
 }
@@ -296,6 +452,9 @@ header i {
 }
 .footer li {
   padding: 0.2em 0;
+}
+.footer li i {
+  margin-right: 0.3em;
 }
 .footer__heading {
   font-family: "Shrikhand";
