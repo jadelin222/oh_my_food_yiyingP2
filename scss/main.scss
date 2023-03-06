@@ -1,153 +1,158 @@
-@import 'config';
-@import 'anim';
-@import 'menu';
+@import "config";
+@import "anim";
+@import "menu";
 
-.step-guide{
-    padding: 1em 1em 3em 1em;
-    gap: 10px;
+.step-guide {
+  padding: 1em 1em 3em 1em;
+  gap: 10px;
 
-    &__btn-container{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        padding: 0 20px;
-    }
-    button{
-        display: flex;
-        flex: 1 0 300px;
-        align-items: center;
-        gap: 15px;
-        text-align: left;
-        font-size: 18px;
-        font-weight: 500;
-        padding: 1.5em;
-        background: $gray-color;
-        box-shadow: 2px 4px 4px rgb(100 100 111 / 25%);
-        border-radius: 20px;
-        .btn-num{
-            padding: 10px 14px;
-            color: white;
-            margin-left: -50px;
-            border-radius: 50%;
-            background: $primary-color;
-        }
-        &:hover{
-            background-color: $secondary-color-selected;
-        }
-    }
-}
-
-.colored-btn{
-    color: white;
-    font-size: 16px;
-    padding: 15px 20px;
-    border-radius: 50px;
-    background-image: linear-gradient(to bottom right, $secondary-color, $primary-color);
+  &__btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+  }
+  button {
+    display: flex;
+    flex: 1 0 300px;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 1.5em;
+    background: $gray-color;
     box-shadow: 2px 4px 4px rgb(100 100 111 / 25%);
-    &:hover{
-        box-shadow: 2px 4px 4px rgb(100 100 111 / 75%);
-        filter: brightness(110%);
-    }  
-}
-.explore-section{
-    text-align: center;
-    background: $gray-color;
-    padding-bottom: 1.5em;
-
-    &__search-location{
-        padding: 0.8em 0;
-        background: $darker-gray-color;
-
-        input{
-            border: none;
-            text-align: center;
-            font-size: 15px;
-            width: 8em;
-            background: $darker-gray-color;
-        }
-        input:focus{
-            outline: transparent;
-        }
+    border-radius: 20px;
+    .btn-num {
+      padding: 10px 14px;
+      color: white;
+      margin-left: -50px;
+      border-radius: 50%;
+      background: $primary-color;
     }
-    &__explore-btn{
-       
-        padding: 10px 20px 30px 20px;
-        line-height: 2.2em;
-        p{
-            color: $p-color;
-            font-weight: 300;
-        }
-        button{
-            font-size: 16px;
-        }
+    &:hover {
+      background-color: $secondary-color-selected;
     }
+  }
 }
 
-.restaurant-section{
-    background: $gray-color;
-    padding: 20px 15px 60px 15px;
-    &__cards-container{
-        display: flex;
+.colored-btn {
+  color: white;
+  font-size: 16px;
+  padding: 15px 20px;
+  border-radius: 50px;
+  background-image: linear-gradient(
+    to bottom right,
+    $secondary-color,
+    $primary-color
+  );
+  box-shadow: 2px 4px 4px rgb(100 100 111 / 25%);
+  &:hover {
+    box-shadow: 2px 4px 4px rgb(100 100 111 / 75%);
+    filter: brightness(110%);
+  }
+}
+.explore-section {
+  text-align: center;
+  background: $gray-color;
+  padding-bottom: 1.5em;
+
+  &__search-location {
+    padding: 0.8em 0;
+    background: $darker-gray-color;
+
+    input {
+      border: none;
+      text-align: center;
+      font-size: 15px;
+      width: 8em;
+      background: $darker-gray-color;
+    }
+    input:focus {
+      outline: transparent;
+    }
+  }
+  &__explore-btn {
+    padding: 10px 20px 30px 20px;
+    line-height: 2.2em;
+    p {
+      color: $p-color;
+      font-weight: 300;
+    }
+    button {
+      font-size: 16px;
+    }
+  }
+}
+
+.restaurant-section {
+  background: $gray-color;
+  padding: 20px 15px 60px 15px;
+  &__cards-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  &__card {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    flex: 1 1 350px;
+    overflow: hidden;
+    max-height: 250px;
+    min-width: 250px;
+    border-radius: 25px;
+    box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.05);
+    .card-img {
+      display: flex;
+      height: 68%;
+      img {
         width: 100%;
-        flex-wrap: wrap;
-        gap: 30px;
+        object-fit: cover;
+      }
     }
-    &__card{
+    .new-tag {
+      background: $tertiary-color;
+      color: $tertiary-color-dark;
+      position: absolute;
+      right: 20px;
+      padding: 0.3em 1.8em;
+      border-radius: 3px;
+    }
+    .card-body {
+      @include flexLayout(space-between, center);
+      height: 32%;
+      line-height: 1.5em;
+      background: white;
+      padding-left: 20px;
+      .text {
         display: flex;
-        position: relative;
+        flex: 1;
         flex-direction: column;
-        flex:1 1 450px;
-        overflow: hidden;
-        max-height: 250px;
-        min-width: 250px;
-        border-radius: 25px;
-        box-shadow: 5px 6px 8px rgba(0,0,0,0.05);
-        .card-img{
-            display: flex;
-            height:68%;
-            img{
-                width: 100%;
-                object-fit: cover;
-            }
+        h4,
+        p {
+          margin: 0;
         }
-        .new-tag{
-            background: $tertiary-color;
-            color: $tertiary-color-dark;
-            position:absolute;
-            right: 20px;
-            padding: 0.3em 1.8em;
-            border-radius: 3px;
+        h4 {
+          font-size: 20px;
+          font-weight: 600;
         }
-        .card-body{
-            display: flex;
-            justify-content: space-between;
-            height: 32%;
-            line-height: 1.5em;
-            background: white;
-            padding-left: 20px;
-            align-items: center;
-            .text{
-                display: flex;
-                flex: 1;
-                flex-direction: column;
-                h4, p{ margin: 0;}
-                h4{
-                    font-size: 20px;
-                    font-weight: 600;
-                  }
-                p{
-                    font-size: 16px;
-                    font-weight: 300;
-                  }
-            }
-            
+        p {
+          font-size: 16px;
+          font-weight: 300;
         }
-        
+      }
     }
+  }
 }
 @media screen and (min-width: 992px) {
-    .menu,.restaurant-section,.step-guide, .footer{
-        padding-left:35px;
-        padding-right:35px;
-    }
+  .menu,
+  .restaurant-section,
+  .step-guide,
+  .footer {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
 }
