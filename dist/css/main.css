@@ -225,7 +225,7 @@ header a i {
   border-radius: 15px;
   box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.05);
   padding: 0 10px;
-  animation: flo 1s ease-out 0s;
+  animation: flo 1s ease-out;
 }
 .menu__card:nth-child(2) {
   animation-delay: 0.2s;
