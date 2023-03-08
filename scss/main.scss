@@ -25,9 +25,11 @@
     box-shadow: 2px 4px 4px rgb(100 100 111 / 25%);
     border-radius: 20px;
     .btn-num {
-      padding: 10px 14px;
+      @include flexLayout(center, center);
+      width: 40px;
+      height: 40px;
       color: white;
-      margin-left: -50px;
+      margin-left: -45px;
       border-radius: 50%;
       background: $primary-color;
     }

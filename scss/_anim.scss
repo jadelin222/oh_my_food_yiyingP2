@@ -104,3 +104,27 @@
     }
   }
 }
+
+.heart-btn {
+  background-color: transparent;
+  font-size: 25px;
+  //filled heart on top
+  .fas {
+    position: relative;
+    font-size: 25.5px;
+    right: 32.1px;
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(
+      to top right,
+      $secondary-color,
+      $primary-color
+    );
+    opacity: 0;
+
+    &:hover,
+    &:active {
+      animation: likebtn 0.5s ease-out forwards;
+    }
+  }
+}

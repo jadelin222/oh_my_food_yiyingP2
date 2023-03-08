@@ -177,6 +177,24 @@ header a i {
   animation: ellipsis3 0.6s infinite;
 }
 
+.heart-btn {
+  background-color: transparent;
+  font-size: 25px;
+}
+.heart-btn .fas {
+  position: relative;
+  font-size: 25.5px;
+  right: 32.1px;
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+  background-image: linear-gradient(to top right, #ff79da, #9356dc);
+  opacity: 0;
+}
+.heart-btn .fas:hover, .heart-btn .fas:active {
+  animation: likebtn 0.5s ease-out forwards;
+}
+
 .res-img {
   z-index: -1;
   height: 290px;
@@ -212,7 +230,7 @@ header a i {
   flex-wrap: wrap;
   gap: 20px;
   margin: 20px 0;
-  animation: blinker 1s ease-out 0s;
+  animation: blinker 1s ease-out;
 }
 .menu__card {
   display: flex;
@@ -270,13 +288,13 @@ header a i {
   height: 100%;
   width: 90px;
   background: #99e2d0;
-  transition: right 0.5s;
+  transition: right 0.5s ease-out;
 }
 .menu__check i {
   font-size: 35px;
   color: white;
   transform: rotate(-180deg);
-  transition: transform 0.8s;
+  transition: transform 0.8s ease-out;
 }
 .menu__text {
   flex: 1 1 auto;
@@ -303,24 +321,6 @@ header a i {
   padding: 15px 45px;
 }
 
-.heart-btn {
-  background-color: transparent;
-  font-size: 25px;
-}
-.heart-btn .fas {
-  position: relative;
-  font-size: 25.5px;
-  right: 32.1px;
-  color: transparent;
-  -webkit-background-clip: text;
-          background-clip: text;
-  background-image: linear-gradient(to top right, #ff79da, #9356dc);
-  opacity: 0;
-}
-.heart-btn .fas:hover, .heart-btn .fas:active {
-  animation: likebtn 0.5s ease-out forwards;
-}
-
 .step-guide {
   padding: 1em 1em 3em 1em;
   gap: 10px;
@@ -345,9 +345,13 @@ header a i {
   border-radius: 20px;
 }
 .step-guide button .btn-num {
-  padding: 10px 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
   color: white;
-  margin-left: -50px;
+  margin-left: -45px;
   border-radius: 50%;
   background: #9356dc;
 }
